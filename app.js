@@ -1,31 +1,20 @@
+let main = document.querySelector('main');
 
-let numSquares = 256;
+let insideContainer = document.createElement('div');
+let screen = document.createElement('div');
 
-(function createSquares(num){
-  let containerDiv = document.querySelector('.container-div')
-  containerDiv.style.border = '2px solid red'
-  containerDiv.style.maxWidth = '500px'
+insideContainer.style.border = '1px solid black';
+insideContainer.style.height = '50%';
+insideContainer.style.width = '50%';
+insideContainer.style.backgroundColor = 'red';
+insideContainer.style.display = 'flex';
+insideContainer.style.alignItems = 'center';
+insideContainer.style.justifyContent = 'center';
 
-  let gridWidth = '27px';
-  let gridHeight = '27px';
+screen.style.border = '1px solid black';
+screen.style.height = '70%';
+screen.style.width = '70%';
+screen.style.backgroundColor = 'grey';
 
-  for (let i = 0; i < numSquares; i++){
-
-    let gridDiv = document.createElement('div') 
-    gridDiv.style.border = '2px solid black'
-    gridDiv.style.height = gridHeight
-    gridDiv.style.width = gridWidth
-
-    gridDiv.addEventListener('mouseenter', function(){
-      gridDiv.style.background = 'black';
-    })
-
-    containerDiv.appendChild(gridDiv)
-  }
-
-
-})(16)
-
-// createSquares(numSquares)
-
-//----------------------------------------------------
+main.appendChild(insideContainer);
+insideContainer.appendChild(screen);
