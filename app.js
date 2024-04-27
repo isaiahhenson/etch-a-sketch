@@ -54,15 +54,14 @@ for (let i = 1; i <= 256; i++) {
 }
 
 select.addEventListener('click', () => {
-  insideContainer.remove();
-  let userInput = prompt('Grid # Chooice: Limit 100');
-  console.log(userInput);
-
-  for (let i = 1; i <= userInput; i++) {
+  screen.innerHTML = '';
+  let userInput = +prompt('Grid # Chooice: Limit 100');
+  for (let i = 1; i <= userInput * userInput; i++) {
     let gridSquare = document.createElement('div');
     gridSquare.style.border = '1px solid black';
-    gridSquare.style.height = '6.25%';
-    gridSquare.style.width = '6.25%';
+    gridSquare.style.height = `${screen.clientHeight / userInput}px`;
+    gridSquare.style.width = `${screen.clientWidth / userInput}px`;
+    console.log(screen.clientWidth / userInput);
 
     screen.appendChild(gridSquare);
 
@@ -71,3 +70,8 @@ select.addEventListener('click', () => {
     });
   }
 });
+
+//prompt user, prompt()
+//store input, variable
+//replace w/newgrid using input, event handler.
+//
