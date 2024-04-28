@@ -2,15 +2,18 @@ let main = document.querySelector('main');
 let insideContainer = document.createElement('div');
 let screen = document.createElement('div');
 let select = document.createElement('button');
+let nob = document.createElement('div');
 let select_p = document.createElement('p');
 
 insideContainer.style.border = '1px solid black';
+insideContainer.style.paddingBottom = '20px';
 insideContainer.style.height = '50%';
 insideContainer.style.width = '50%';
 insideContainer.style.backgroundColor = 'red';
 insideContainer.style.display = 'flex';
 insideContainer.style.alignItems = 'center';
 insideContainer.style.justifyContent = 'center';
+insideContainer.style.borderRadius = '5%';
 
 screen.style.border = '1px solid black';
 screen.style.height = '70%';
@@ -18,6 +21,7 @@ screen.style.width = '70%';
 screen.style.backgroundColor = 'grey';
 screen.style.display = 'flex';
 screen.style.flexWrap = 'wrap';
+// screen.style.flexDirection = 'column';
 
 select.style.border = '1px solid black';
 select.style.height = '25px';
@@ -26,7 +30,13 @@ select.style.backgroundColor = 'white';
 select.style.position = 'absolute';
 select.style.top = '50px';
 
-select.appendChild(select_p);
+nob.style.width = '25px';
+nob.style.height = '25px';
+nob.style.borderRadius = '10px';
+nob.style.borderRadius = '10px';
+nob.style.backgroundColor = 'white';
+nob.style.position = 'absolute';
+nob.style.bottom = '163px';
 
 select_p.style.marginTop = '6px';
 select_p.style.marginBottom = '0';
@@ -35,6 +45,8 @@ select_p.textContent = 'Select';
 
 main.appendChild(select);
 main.appendChild(insideContainer);
+insideContainer.appendChild(nob);
+select.appendChild(select_p);
 insideContainer.appendChild(screen);
 
 //create div
@@ -61,7 +73,8 @@ select.addEventListener('click', () => {
     gridSquare.style.border = '1px solid black';
     gridSquare.style.height = `${screen.clientHeight / userInput}px`;
     gridSquare.style.width = `${screen.clientWidth / userInput}px`;
-    console.log(screen.clientWidth / userInput);
+    gridSquare.style.flexGrow = '1';
+    gridSquare.style.flexShrink = '1';
 
     screen.appendChild(gridSquare);
 
@@ -69,6 +82,7 @@ select.addEventListener('click', () => {
       gridSquare.style.backgroundColor = 'black';
     });
   }
+  screen.style.overflow = 'hidden';
 });
 
 //prompt user, prompt()
