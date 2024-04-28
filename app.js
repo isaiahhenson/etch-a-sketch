@@ -3,10 +3,11 @@ let insideContainer = document.createElement('div');
 let screen = document.createElement('div');
 let select = document.createElement('button');
 let nob = document.createElement('div');
+let nob2 = document.createElement('div');
 let select_p = document.createElement('p');
 
 insideContainer.style.border = '1px solid black';
-insideContainer.style.paddingBottom = '20px';
+insideContainer.style.paddingBottom = '50px';
 insideContainer.style.height = '50%';
 insideContainer.style.width = '50%';
 insideContainer.style.backgroundColor = 'red';
@@ -30,13 +31,21 @@ select.style.backgroundColor = 'white';
 select.style.position = 'absolute';
 select.style.top = '50px';
 
-nob.style.width = '25px';
-nob.style.height = '25px';
-nob.style.borderRadius = '10px';
-nob.style.borderRadius = '10px';
+nob.style.width = '45px';
+nob.style.height = '45px';
+nob.style.borderRadius = '50%';
 nob.style.backgroundColor = 'white';
 nob.style.position = 'absolute';
-nob.style.bottom = '163px';
+nob.style.bottom = '155px';
+nob.style.right = '320px';
+
+nob2.style.width = '45px';
+nob2.style.height = '45px';
+nob2.style.borderRadius = '50%';
+nob2.style.backgroundColor = 'white';
+nob2.style.position = 'absolute';
+nob2.style.bottom = '155px';
+nob2.style.left = '320px';
 
 select_p.style.marginTop = '6px';
 select_p.style.marginBottom = '0';
@@ -46,6 +55,7 @@ select_p.textContent = 'Select';
 main.appendChild(select);
 main.appendChild(insideContainer);
 insideContainer.appendChild(nob);
+insideContainer.appendChild(nob2);
 select.appendChild(select_p);
 insideContainer.appendChild(screen);
 
